@@ -1,0 +1,31 @@
+apiVersion: skaffold/v4beta13
+kind: Config
+metadata:
+  name: cert-manager-skaffold
+
+profiles:
+  - name: dev
+    activation:
+      - command: dev
+    deploy:
+      helm:
+        releases:
+          - name: cert-manager-deployment
+            chartPath: helm
+            namespace: cert-manager
+            createNamespace: true
+            upgradeOnChange: true
+            wait: true
+
+  - name: prod
+    deploy:
+      helm:
+        releases:
+          - name: cert-manager-deployment
+            chartPath: helm
+            namespace: cert-manager
+            createNamespace: true
+            valuesFiles:
+              - helm/values-prod.yaml
+            wait: true
+            upgradeOnChange: true
