@@ -3,8 +3,8 @@ gateway:
 
 issuer:
   server: https://acme-v02.api.letsencrypt.org/directory
+  accountKeySecretName: "tls-account-key"
   # email: "john@doe.com" # REQUIRED
-  # accountKeySecretName: "tls-account-key" # REQUIRED
 
 certificates:
   root:
