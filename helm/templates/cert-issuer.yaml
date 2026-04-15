@@ -4,7 +4,6 @@ metadata:
   name: {{ .Values.issuer.name }}
 spec:
   acme:
-    # Let's Encrypt production API
     server: {{ .Values.issuer.server | quote }}
     email: {{ .Values.issuer.email | quote }}
     privateKeySecretRef:
