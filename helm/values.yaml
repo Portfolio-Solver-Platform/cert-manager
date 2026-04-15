@@ -13,6 +13,12 @@ certificates:
   auth:
     secretName: auth-tls-cert
     # domainName: "auth.psp.com" # REQUIRED
+  monitoring:
+    secretName: monitoring-tls-cert
+    # domainName: "metrics.psp.com" # REQUIRED
+  secrets:
+    secretName: secrets-tls-cert
+    # domainName: "secrets.psp.com" # REQUIRED
 
 cert-manager:
   crds:
