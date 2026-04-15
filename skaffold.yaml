@@ -10,22 +10,22 @@ profiles:
     deploy:
       helm:
         releases:
-          - name: cert-manager-deployment
+          - name: cert-manager
             chartPath: helm
             namespace: cert-manager
             createNamespace: true
             upgradeOnChange: true
             wait: true
+            valuesFiles:
+              - helm/values-dev.yaml
 
   - name: prod
     deploy:
       helm:
         releases:
-          - name: cert-manager-deployment
+          - name: cert-manager
             chartPath: helm
             namespace: cert-manager
             createNamespace: true
-            valuesFiles:
-              - helm/values-prod.yaml
             wait: true
             upgradeOnChange: true
