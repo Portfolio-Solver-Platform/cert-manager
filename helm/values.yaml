@@ -1,7 +1,18 @@
+gateway:
+  namespace: gateway
+
 issuer:
   server: https://acme-v02.api.letsencrypt.org/directory
-  # Set email
-  # Set accountKeySecretName
+  # email: "john@doe.com" # REQUIRED
+  # accountKeySecretName: "tls-account-key" # REQUIRED
+
+certificates:
+  root:
+    secretName: root-tls-cert
+    # domainName: "psp.com" # REQUIRED
+  auth:
+    secretName: auth-tls-cert
+    # domainName: "auth.psp.com" # REQUIRED
 
 cert-manager:
   crds:

@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
-  name: main
+  name: {{ .Values.issuer.name }}
 spec:
   acme:
     # Let's Encrypt production API
