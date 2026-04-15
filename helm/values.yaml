@@ -2,6 +2,7 @@ gateway:
   namespace: gateway
 
 issuer:
+  name: letsencrypt
   server: https://acme-v02.api.letsencrypt.org/directory
   accountKeySecretName: "tls-account-key"
   # email: "john@doe.com" # REQUIRED
