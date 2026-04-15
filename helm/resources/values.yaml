@@ -1,4 +1,5 @@
 gateway:
+  name: gateway
   namespace: gateway
 
 issuer:

@@ -10,5 +10,8 @@ spec:
       name: {{ .Values.issuer.accountKeySecretName }}
     solvers:
     - http01:
-        ingress:
-          ingressClassName: istio
+        gatewayHTTPRoute:
+          parentRefs:
+          - name: {{ .Values.gateway.name }}
+            namespace: {{ .Values.gateway.namespace }}
+            kind: Gateway
