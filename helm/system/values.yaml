@@ -1,10 +1,10 @@
-# cert-manager configuration (PROD environment)
 cert-manager:
-  # CRDs still enabled
+  config:
+    enableGatewayAPI: true
+
   crds:
     enabled: true
 
-  # Higher resources for production
   resources:
     requests:
       cpu: 100m

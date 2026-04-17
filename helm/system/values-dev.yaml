@@ -1,10 +1,4 @@
-# cert-manager configuration (DEV environment)
 cert-manager:
-  # Install CRDs with the Helm chart
-  crds:
-    enabled: true
-
-  # Resource requests/limits for dev
   resources:
     requests:
       cpu: 10m

@@ -1,0 +1,23 @@
+gateway:
+  name: gateway
+  namespace: gateway
+
+issuer:
+  name: letsencrypt
+  server: https://acme-v02.api.letsencrypt.org/directory
+  accountKeySecretName: "tls-account-key"
+  # email: "john@doe.com" # REQUIRED
+
+certificates:
+  root:
+    secretName: root-tls-cert
+    # domainName: "psp.com" # REQUIRED
+  auth:
+    secretName: auth-tls-cert
+    # domainName: "auth.psp.com" # REQUIRED
+  monitoring:
+    secretName: monitoring-tls-cert
+    # domainName: "metrics.psp.com" # REQUIRED
+  secrets:
+    secretName: secrets-tls-cert
+    # domainName: "secrets.psp.com" # REQUIRED

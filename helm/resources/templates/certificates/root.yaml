@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: root-cert
+  namespace: {{ .Values.gateway.namespace }}
+spec:
+  secretName: {{ .Values.certificates.root.secretName }}
+  issuerRef:
+    name: {{ .Values.issuer.name }}
+    kind: ClusterIssuer
+  commonName: {{ .Values.certificates.root.domainName }}
+  dnsNames:
+  - {{ .Values.certificates.root.domainName }}

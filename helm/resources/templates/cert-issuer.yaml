@@ -1,0 +1,17 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: {{ .Values.issuer.name }}
+spec:
+  acme:
+    server: {{ .Values.issuer.server | quote }}
+    email: {{ .Values.issuer.email | quote }}
+    privateKeySecretRef:
+      name: {{ .Values.issuer.accountKeySecretName }}
+    solvers:
+    - http01:
+        gatewayHTTPRoute:
+          parentRefs:
+          - name: {{ .Values.gateway.name }}
+            namespace: {{ .Values.gateway.namespace }}
+            kind: Gateway
