@@ -18,6 +18,3 @@ certificates:
   monitoring:
     secretName: monitoring-tls-cert
     # domainName: "metrics.psp.com" # REQUIRED
-  secrets:
-    secretName: secrets-tls-cert
-    # domainName: "secrets.psp.com" # REQUIRED
